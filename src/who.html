@@ -8,7 +8,7 @@ permalink: "who.html"
   {% for person in collections.who %}
     <section class="who-card">
       {% if person.data.photo %}
-        <img src="{{ person.data.photo }}" alt="Photo of {{ person.data.name }}">
+        <img src="{{ person.data.photo | url }}" alt="Photo of {{ person.data.name }}">
       {% endif %}
       <h2>{{ person.data.name }}</h2>
       {% if person.data.pronouns %}<p class="who-pronouns">{{ person.data.pronouns }}</p>{% endif %}

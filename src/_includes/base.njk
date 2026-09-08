@@ -5,18 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ title or "Community" }}</title>
   {% include "theme-init.njk" %}
-  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="{{ '/css/style.css' | url }}">
 </head>
 <body>
   <header class="site-header">
     <a class="site-logo" href="/">
-      <img id="logo" src="/img/siteImages/ashtLogo4-sm.png" alt="Site logo">
+      <img id="logo" src="{{ '/img/siteImages/ashtLogo4-sm.png' | url}}" alt="Site logo">
       <span>Rustbelt Digital Network</span>
     </a>
     <nav>
-      <a href="/">Home</a>
-      <a href="/who.html">Who We Are</a>
-      <a href="/events.html">Events</a>
+     <a href="{{ '/' | url }}">Home</a>
+      <a href="{{ '/who.html' | url }}">Who We Are</a>
+      <a href="{{ '/events.html' | url }}">Events</a>
       <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle dark mode">🌓</button>
     </nav>
   </header>

@@ -13,7 +13,7 @@ permalink: "events.html"
   {% for event in collections.upcomingEvents %}
     <div class="event-card">
       {% if event.data.image %}
-        <img src="{{ event.data.image }}" alt="">
+        <img src="{{ event.data.image | url }}" alt="">
       {% endif %}
       <h3>{{ event.data.title }}</h3>
       <p class="event-meta">
@@ -32,7 +32,7 @@ permalink: "events.html"
   {% for event in collections.pastEvents %}
     <div class="event-card event-card--past">
       {% if event.data.image %}
-        <img src="{{ event.data.image }}" alt="">
+        <img src="{{ event.data.image | url }}" alt="">
       {% endif %}
       <h3>{{ event.data.title }}</h3>
       <p class="event-meta">
