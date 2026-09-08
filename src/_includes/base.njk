@@ -4,18 +4,20 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ title or "Community" }}</title>
+  {% include "theme-init.njk" %}
   <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
   <header class="site-header">
     <a class="site-logo" href="/">
-      <img src="/img/logo.svg" alt="Site logo" height="40">
-      <span>Our Community</span>
+      <img id="logo" src="/img/siteImages/ashtLogo4-sm.png" alt="Site logo">
+      <span>Rustbelt Digital Network</span>
     </a>
     <nav>
       <a href="/">Home</a>
       <a href="/who.html">Who We Are</a>
       <a href="/events.html">Events</a>
+      <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle dark mode">🌓</button>
     </nav>
   </header>
 
@@ -26,5 +28,15 @@
   <footer class="site-footer">
     <p>Built with <a href="https://www.11ty.dev/">11ty</a>. Member profiles are community-submitted.</p>
   </footer>
+
+  <script>
+    document.getElementById("theme-toggle").addEventListener("click", function () {
+      var current = document.documentElement.getAttribute("data-theme");
+      var next = current === "dark" ? "light" : "dark";
+      document.documentElement.setAttribute("data-theme", next);
+      localStorage.setItem("theme", next);
+    });
+  </script>
 </body>
 </html>
+
