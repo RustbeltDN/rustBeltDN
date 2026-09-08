@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ title or "Community" }}</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="site-logo" href="/">
+      <img src="/img/logo.svg" alt="Site logo" height="40">
+      <span>Our Community</span>
+    </a>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/who.html">Who We Are</a>
+      <a href="/events.html">Events</a>
+    </nav>
+  </header>
+
+  <main>
+    {{ content | safe }}
+  </main>
+
+  <footer class="site-footer">
+    <p>Built with <a href="https://www.11ty.dev/">11ty</a>. Member profiles are community-submitted.</p>
+  </footer>
+</body>
+</html>

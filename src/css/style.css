@@ -1,0 +1,28 @@
+:root {
+  color-scheme: light;
+  font-family: system-ui, sans-serif;
+}
+body { margin: 0; color: #1a1a1a; background: #fff; }
+main { max-width: 720px; margin: 0 auto; padding: 1.5rem; }
+.site-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1rem 1.5rem; border-bottom: 1px solid #eee;
+}
+.site-logo { display: flex; align-items: center; gap: 0.5rem; text-decoration: none; color: inherit; font-weight: 600; }
+.site-header nav a { margin-left: 1rem; text-decoration: none; color: #1a1a1a; }
+.member-list { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 1rem; }
+.member-card a { display: block; text-align: center; text-decoration: none; color: inherit; }
+.member-card img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 50%; }
+.member-photo { max-width: 240px; border-radius: 8px; }
+.site-footer { text-align: center; padding: 2rem; color: #666; font-size: 0.9rem; }
+
+.who-card, .event-card {
+  border: 1px solid #eee; border-radius: 8px; padding: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+.who-card img, .event-card img {
+  max-width: 160px; border-radius: 8px; display: block; margin-bottom: 0.75rem;
+}
+.event-card--past { opacity: 0.75; }
+.event-meta { color: #555; font-size: 0.9rem; }
+.events-past h2 { margin-top: 2.5rem; }

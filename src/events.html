@@ -1,0 +1,47 @@
+---
+layout: base.njk
+title: Events
+permalink: "events.html"
+---
+<h1>Events</h1>
+
+<section class="events-upcoming">
+  <h2>Upcoming Events</h2>
+  {% if collections.upcomingEvents.length == 0 %}
+    <p>No upcoming events yet — check back soon.</p>
+  {% endif %}
+  {% for event in collections.upcomingEvents %}
+    <div class="event-card">
+      {% if event.data.image %}
+        <img src="{{ event.data.image }}" alt="">
+      {% endif %}
+      <h3>{{ event.data.title }}</h3>
+      <p class="event-meta">
+        <strong>When:</strong> {{ event.data.when }} &middot;
+        <strong>Where:</strong> {{ event.data.where }} &middot;
+        <strong>Hosted by:</strong> {{ event.data.who }}
+      </p>
+      <div class="event-description">{{ event.templateContent | safe }}</div>
+    </div>
+  {% endfor %}
+</section>
+
+{% if collections.pastEvents.length > 0 %}
+<section class="events-past">
+  <h2>Past Events</h2>
+  {% for event in collections.pastEvents %}
+    <div class="event-card event-card--past">
+      {% if event.data.image %}
+        <img src="{{ event.data.image }}" alt="">
+      {% endif %}
+      <h3>{{ event.data.title }}</h3>
+      <p class="event-meta">
+        <strong>When:</strong> {{ event.data.when }} &middot;
+        <strong>Where:</strong> {{ event.data.where }} &middot;
+        <strong>Hosted by:</strong> {{ event.data.who }}
+      </p>
+      <div class="event-description">{{ event.templateContent | safe }}</div>
+    </div>
+  {% endfor %}
+</section>
+{% endif %}

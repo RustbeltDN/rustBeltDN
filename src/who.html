@@ -1,0 +1,19 @@
+---
+layout: base.njk
+title: Who We Are
+permalink: "who.html"
+---
+<h1>Who We Are</h1>
+<div class="who-list">
+  {% for person in collections.who %}
+    <section class="who-card">
+      {% if person.data.photo %}
+        <img src="{{ person.data.photo }}" alt="Photo of {{ person.data.name }}">
+      {% endif %}
+      <h2>{{ person.data.name }}</h2>
+      {% if person.data.pronouns %}<p class="who-pronouns">{{ person.data.pronouns }}</p>{% endif %}
+      {% if person.data.role %}<p class="who-role">{{ person.data.role }}</p>{% endif %}
+      <div class="who-bio">{{ person.templateContent | safe }}</div>
+    </section>
+  {% endfor %}
+</div>

@@ -1,0 +1,13 @@
+{
+  "name": "community-site",
+  "version": "1.0.0",
+  "description": "Community member-profile site built with 11ty",
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "eleventy"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0",
+    "markdown-it": "^14.1.0"
+  }
+}

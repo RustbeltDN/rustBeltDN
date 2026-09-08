@@ -1,0 +1,39 @@
+backend:
+  name: github
+  repo: YOUR-GITHUB-USERNAME/YOUR-REPO-NAME   # <-- update this
+  branch: main
+
+# Every submission opens a pull request instead of publishing straight to
+# main, giving you a review/moderation step before anything goes live.
+publish_mode: editorial_workflow
+
+media_folder: "src/img/members"
+public_folder: "/img/members"
+
+collections:
+  - name: who
+    label: Who We Are (Member Profiles)
+    folder: src/who
+    create: true
+    slug: "{{fields.name | slugify}}"
+    format: frontmatter
+    fields:
+      - { label: Full Name, name: name, widget: string }
+      - { label: Pronouns, name: pronouns, widget: string, required: false }
+      - { label: Role, name: role, widget: string, required: false }
+      - { label: Photo, name: photo, widget: image, required: false }
+      - { label: Bio, name: body, widget: markdown }
+
+  - name: events
+    label: Events
+    folder: src/events
+    create: true
+    slug: "{{fields.title | slugify}}"
+    format: frontmatter
+    fields:
+      - { label: Event Title (What), name: title, widget: string }
+      - { label: Hosted By (Who), name: who, widget: string }
+      - { label: Date (When), name: when, widget: datetime, date_format: "YYYY-MM-DD", time_format: false }
+      - { label: Location (Where), name: where, widget: string }
+      - { label: Image, name: image, widget: image, required: false, media_folder: "src/img/events", public_folder: "/img/events" }
+      - { label: Description, name: body, widget: markdown, required: false }
