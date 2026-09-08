@@ -1,0 +1,55 @@
+name: Build and deploy site
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+  schedule:
+    # Rebuilds once a day so an event moves into "Past Events" the day it
+    # happens, even if nobody has submitted a form that day. Time is UTC —
+    # 12:00 UTC ≈ 8am US Eastern.
+    - cron: "0 12 * * *"
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm ci
+      - name: Determine path prefix
+        id: prefix
+        run: |
+          REPO="${{ github.event.repository.name }}"
+          if [[ "$REPO" == *.github.io ]]; then
+            echo "value=/" >> "$GITHUB_OUTPUT"
+          else
+            echo "value=/$REPO/" >> "$GITHUB_OUTPUT"
+          fi
+      - run: npm run build
+        env:
+          ELEVENTY_PATH_PREFIX: ${{ steps.prefix.outputs.value }}
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

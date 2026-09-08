@@ -4,8 +4,7 @@
   "description": "Community member-profile site built with 11ty",
   "scripts": {
     "start": "eleventy --serve",
-    "build": "eleventy",
-    "deploy": "gh-pages -d dist"
+    "build": "eleventy"
   },
   "devDependencies": {
     "@11ty/eleventy": "^3.0.0",
