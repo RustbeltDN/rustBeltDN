@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: YOUR-GITHUB-USERNAME/YOUR-REPO-NAME   # <-- update this
+  repo: RustbeltDN/rustBeltDN   
   branch: main
 
 # Every submission opens a pull request instead of publishing straight to
