@@ -14,6 +14,7 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addPassthroughCopy("src/css");
   eleventyConfig.addPassthroughCopy("src/img");
+  eleventyConfig.addPassthroughCopy("admin");
 
   // Every markdown file in src/who/ becomes part of the "who" collection
   eleventyConfig.addCollection("who", (collectionApi) => {
