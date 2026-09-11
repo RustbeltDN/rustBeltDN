@@ -2,6 +2,7 @@ backend:
   name: github
   repo: RustbeltDN/rustBeltDN   
   branch: main
+  base_url: https://sveltia-cms-auth.ebbondar.workers.dev
 
 # Every submission opens a pull request instead of publishing straight to
 # main, giving you a review/moderation step before anything goes live.
