@@ -1,6 +1,10 @@
 const markdownIt = require("markdown-it");
 
 module.exports = function (eleventyConfig) {
+  const prefix = process.env.ELEVENTY_PATH_PREFIX || "/";
+  // Normalized with no trailing slash, e.g. "/rustBeltDN" or "" for root
+  const normalizedPrefix = prefix === "/" ? "" : prefix.replace(/\/$/, "");
+
   // IMPORTANT: html:false blocks raw <script>/<iframe>/etc. tags from being
   // rendered from markdown content. Since member bios are community-submitted,
   // this is the single most important security setting in this file — do not
@@ -10,6 +14,46 @@ module.exports = function (eleventyConfig) {
     linkify: true,
     breaks: true,
   });
+
+  // Root-relative paths typed or inserted freeform inside markdown (e.g. an
+  // image added via the CMS's inline "add image" button, rather than a
+  // dedicated Photo field) never pass through Nunjucks' `url` filter, since
+  // they're just plain text in the body. On a GitHub Pages project site
+  // (served under /repo-name/), an unprefixed "/img/..." path resolves one
+  // level too high and silently 404s. These two renderer overrides prefix
+  // any such path automatically, so this can't happen again regardless of
+  // how an image or link ends up in someone's bio or event description.
+  const prefixIfRootRelative = (url) => {
+    if (!normalizedPrefix) return url; // local dev: nothing to do
+    if (!url.startsWith("/") || url.startsWith("//")) return url; // leave external/protocol-relative URLs alone
+    if (url.startsWith(`${normalizedPrefix}/`)) return url; // already prefixed
+    return normalizedPrefix + url;
+  };
+
+  const defaultImageRender =
+    md.renderer.rules.image ||
+    ((tokens, idx, options, env, self) => self.renderToken(tokens, idx, options));
+  md.renderer.rules.image = (tokens, idx, options, env, self) => {
+    const token = tokens[idx];
+    const srcIndex = token.attrIndex("src");
+    if (srcIndex >= 0) {
+      token.attrs[srcIndex][1] = prefixIfRootRelative(token.attrs[srcIndex][1]);
+    }
+    return defaultImageRender(tokens, idx, options, env, self);
+  };
+
+  const defaultLinkOpenRender =
+    md.renderer.rules.link_open ||
+    ((tokens, idx, options, env, self) => self.renderToken(tokens, idx, options));
+  md.renderer.rules.link_open = (tokens, idx, options, env, self) => {
+    const token = tokens[idx];
+    const hrefIndex = token.attrIndex("href");
+    if (hrefIndex >= 0) {
+      token.attrs[hrefIndex][1] = prefixIfRootRelative(token.attrs[hrefIndex][1]);
+    }
+    return defaultLinkOpenRender(tokens, idx, options, env, self);
+  };
+
   eleventyConfig.setLibrary("md", md);
 
   eleventyConfig.addPassthroughCopy("src/css");
