@@ -1,6 +1,6 @@
 # Rustbelt Digital Network
 Welcome to our GitHub organization for the Rustbelt Digital Network! 
-We are a group of people in the general vicinity of Lake Erie and the Great Lakes (an epicenter of the "rust belt") who care about digital arts and digital humanities and related projects as they uplift our region. 
+We are a group of people in the general vicinity of Lake Erie and the Great Lakes (an epicenter of the "rust belt") who care about digital arts and digital humanities and want to share our work. 
 This project exists to be a social connector and repository of shared information about people, places, events, and projects in our region. 
 
 ![ashtbscl-ghb-night.jpg](src/img/siteImages/ashtbscl-ghb-night.jpg)
