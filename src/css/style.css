@@ -91,7 +91,8 @@ a:focus-visible {
   border: 1px solid var(--color-border); background: var(--color-surface);
   border-radius: 8px; padding: 1.25rem; margin-bottom: 1.25rem;
 }
-.who-card img {
+/* ebb: for the next one, the > in the selector means style only the immediate child of .who-card. */
+.who-card > img {
   max-width: 160px; aspect-ratio: 1; object-fit: cover;
   border-radius: 50%; display: block; margin-bottom: 0.75rem;
 }
@@ -114,7 +115,7 @@ a:focus-visible {
 }
 .project-row { display: flex; gap: 0.75rem; align-items: flex-start; }
 .project-icon-link { flex-shrink: 0; }
-.project-icon {
+img.project-icon {
   width: 56px; height: 56px; object-fit: cover;
   border-radius: 6px; display: block; margin: 0;
 }
