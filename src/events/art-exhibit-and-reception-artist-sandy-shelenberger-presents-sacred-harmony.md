@@ -5,7 +5,7 @@ when: 2026-09-20
 where: 134 W. 7th St., Erie, PA
 eventImage:
   image: /img/events/shelenberger.sandy_.jpg
-  imageAlt: 'Shifting sands, Sapphire Skies: by Sandy Shelenberger (artist)'
+  imageAlt: 'Shifting sands, Sapphire Skies: by Sandy Shelenberger (fiber artist)'
 ---
 
 Artist, Sandy Shelenberger presents _Sacred Harmony._ 
