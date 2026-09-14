@@ -10,8 +10,7 @@ This project exists to be a social connector and repository of shared informatio
 * Our site logo (until one of us makes a better one!), created by [Elisa Beshero-Bondar](https://github.com/ebeshero) with Inkscape starting from Gregory Bondar's photo.
 
 # 🚧 
-This repository supports a website that our members can help to build. To help out in this space, you will [need a GitHub account](https://docs.github.com/en/account-and-profile/how-tos/account-management/creating-an-account-on-github). 
-(We'll post some instructions when we're ready!)
+This repository supports a website that our members can help to build. To help out in this space, you will [need a GitHub account](https://docs.github.com/en/account-and-profile/how-tos/account-management/creating-an-account-on-github) and become a member of our organization. Here are detailed instructions on [How to Contribute Content](contributing-content.md). 
 
 
 
