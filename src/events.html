@@ -14,7 +14,10 @@ permalink: "events.html"
     <div class="event-card">
       <span class="event-pin" aria-hidden="true">📌</span>
         {% if event.data.eventImage %}
-          <img src="{{ event.data.eventImage.image | url }}" alt="{{ event.data.eventImage.imageAlt }}">
+          <figure>
+            <img src="{{ event.data.eventImage.image | url }}" alt="{{ event.data.eventImage.imageAlt }}">
+          <figcaption>{{ event.data.eventImage.imageAlt }}</figcaption>
+        </figure>
         {% endif %}
       <h3>{{ event.data.title }}</h3>
       <ul class="event-meta">
@@ -34,7 +37,10 @@ permalink: "events.html"
   {% for event in collections.pastEvents %}
     <div class="event-card event-card--past">
         {% if event.data.eventImage %}
+        <figure>
           <img src="{{ event.data.eventImage.image | url }}" alt="{{ event.data.eventImage.imageAlt }}">
+          <figcaption>{{ event.data.eventImage.imageAlt }}</figcaption>
+        </figure>
         {% endif %}
       <h3>{{ event.data.title }}</h3>
       <ul class="event-meta">

@@ -8,7 +8,7 @@ backend:
 # main, giving you a review/moderation step before anything goes live.
 publish_mode: editorial_workflow
 
-media_folder: "src/img/members"
+media_folder: "/src/img/members"
 public_folder: "/img/members"
 
 # By default Sveltia CMS keeps uploaded filenames exactly as-is (spaces,
@@ -72,6 +72,6 @@ collections:
         required: false
         hint: "Optional — add an image and its description together, or skip both."
         fields:
-          - { label: Image, name: image, widget: image, media_folder: "src/img/events", public_folder: "/img/events" }
+          - { label: Image, name: image, widget: image, media_folder: "/src/img/events", public_folder: "/img/events" }
           - { label: Image Description (Alt Text), name: imageAlt, widget: string, hint: "Briefly describe the image for people using screen readers — e.g. \"Volunteers setting up chairs in the community room.\"" }
       - { label: Description, name: body, widget: markdown, required: false }
