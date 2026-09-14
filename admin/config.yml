@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: RustbeltDN/rustBeltDN   
+  repo: RustbeltDN/rustBeltDN
   branch: main
   base_url: https://sveltia-cms-auth.ebbondar.workers.dev
 
@@ -11,6 +11,14 @@ publish_mode: editorial_workflow
 media_folder: "src/img/members"
 public_folder: "/img/members"
 
+# By default Sveltia CMS keeps uploaded filenames exactly as-is (spaces,
+# accents, etc.), which can break links on GitHub Pages. This sanitizes
+# them into safe, hyphenated filenames automatically.
+media_libraries:
+  default:
+    config:
+      slugify_filename: true
+
 collections:
   - name: who
     label: Who We Are (Member Profiles)
@@ -20,10 +28,25 @@ collections:
     format: frontmatter
     fields:
       - { label: Full Name, name: name, widget: string }
+      - label: Last Name (for alphabetizing)
+        name: sortName
+        widget: string
+        hint: "Used to sort and group the directory — use your last name, or whatever name you'd like listed under."
       - { label: Pronouns, name: pronouns, widget: string, required: false }
       - { label: Role, name: role, widget: string, required: false }
       - { label: Photo, name: photo, widget: image, required: false }
       - { label: Bio, name: body, widget: markdown }
+      - label: Projects
+        name: projects
+        widget: list
+        required: false
+        label_singular: Project
+        hint: "Optional — add one entry per project you'd like to share."
+        fields:
+          - { label: Project Title, name: title, widget: string }
+          - { label: Project Image, name: image, widget: image, required: false }
+          - { label: Project Link, name: url, widget: string, required: false, hint: "Optional — where should the title/image link to?" }
+          - { label: Description, name: description, widget: markdown, required: false }
 
   - name: events
     label: Events
