@@ -132,8 +132,10 @@ img.project-icon {
   position: absolute; top: -0.7rem; left: 50%; transform: translateX(-50%) rotate(-8deg);
   font-size: 1.5rem; line-height: 1; user-select: none;
 }
-.event-card img {
-  max-width: 500px; border-radius: 8px; display: block; margin-bottom: 0.75rem;
+.event-card img {  width:95%;
+  max-width: 500px;
+  border-radius: 8px;
+  margin-bottom: 0.75rem;
 }
 .event-card--past { opacity: 0.75; }
 .event-meta {
