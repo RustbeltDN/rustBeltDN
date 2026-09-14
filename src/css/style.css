@@ -75,7 +75,7 @@ a:focus-visible {
 
 .site-header span {font-size: 2.5rem; flex:2;}
 .site-header nav { display: flex; align-items: center; }
-.site-header nav a { margin-left: 1rem; text-decoration: none; color: var(--text-primary); }
+.site-header nav a { margin-left: 1rem; }
 
 .theme-toggle {
   margin-left: 1rem; border: 1px solid var(--color-border); background: var(--color-surface);
