@@ -124,11 +124,21 @@ a:focus-visible {
 .project-description p { margin: 0.25rem 0 0; }
 
 /* Event cards */
+.event-card {
+  position: relative;
+}
+.event-pin {
+  position: absolute; top: -0.7rem; left: 50%; transform: translateX(-50%) rotate(-8deg);
+  font-size: 1.5rem; line-height: 1; user-select: none;
+}
 .event-card img {
   max-width: 160px; border-radius: 8px; display: block; margin-bottom: 0.75rem;
 }
 .event-card--past { opacity: 0.75; }
-.event-meta { color: var(--text-secondary); font-size: 0.9rem; }
+.event-meta {
+  color: var(--text-secondary); font-size: 0.9rem;
+  list-style: none; margin: 0; padding: 0;
+}
 .events-past h2 { margin-top: 2.5rem; }
 
 /* ebb: Specific to just index.html */

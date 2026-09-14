@@ -30,13 +30,13 @@ permalink: "who.html"
           <div class="who-projects">
             {% for project in person.data.projects %}
               <div class="project-row">
-                {% if project.image %}
+                {% if project.projectImage %}
                   {% if project.url %}
                     <a class="project-icon-link" href="{{ project.url }}">
-                      <img class="project-icon" src="{{ project.image | url }}" alt="">
+                      <img class="project-icon" src="{{ project.projectImage.image | url }}" alt="{{ project.projectImage.imageAlt }}">
                     </a>
                   {% else %}
-                    <img class="project-icon" src="{{ project.image | url }}" alt="">
+                    <img class="project-icon" src="{{ project.projectImage.image | url }}" alt="{{ project.projectImage.imageAlt }}">
                   {% endif %}
                 {% endif %}
                 <div class="project-info">

@@ -44,7 +44,14 @@ collections:
         hint: "Optional — add one entry per project you'd like to share."
         fields:
           - { label: Project Title, name: title, widget: string }
-          - { label: Project Image, name: image, widget: image, required: false }
+          - label: Project Image
+            name: projectImage
+            widget: object
+            required: false
+            hint: "Optional — add an image and its description together, or skip both."
+            fields:
+              - { label: Image, name: image, widget: image }
+              - { label: Image Description (Alt Text), name: imageAlt, widget: string, hint: "Briefly describe the image for screen readers." }
           - { label: Project Link, name: url, widget: string, required: false, hint: "Optional — where should the title/image link to?" }
           - { label: Description, name: description, widget: markdown, required: false }
 
@@ -59,5 +66,12 @@ collections:
       - { label: Hosted By (Who), name: who, widget: string }
       - { label: Date (When), name: when, widget: datetime, date_format: "YYYY-MM-DD", time_format: false }
       - { label: Location (Where), name: where, widget: string }
-      - { label: Image, name: image, widget: image, required: false, media_folder: "src/img/events", public_folder: "/img/events" }
+      - label: Event Image
+        name: eventImage
+        widget: object
+        required: false
+        hint: "Optional — add an image and its description together, or skip both."
+        fields:
+          - { label: Image, name: image, widget: image, media_folder: "src/img/events", public_folder: "/img/events" }
+          - { label: Image Description (Alt Text), name: imageAlt, widget: string, hint: "Briefly describe the image for people using screen readers — e.g. \"Volunteers setting up chairs in the community room.\"" }
       - { label: Description, name: body, widget: markdown, required: false }

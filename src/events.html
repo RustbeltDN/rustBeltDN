@@ -12,15 +12,16 @@ permalink: "events.html"
   {% endif %}
   {% for event in collections.upcomingEvents %}
     <div class="event-card">
-      {% if event.data.image %}
-        <img src="{{ event.data.image | url }}" alt="">
-      {% endif %}
+      <span class="event-pin" aria-hidden="true">📌</span>
+        {% if event.data.eventImage %}
+          <img src="{{ event.data.eventImage.image | url }}" alt="{{ event.data.eventImage.imageAlt }}">
+        {% endif %}
       <h3>{{ event.data.title }}</h3>
-      <p class="event-meta">
-        <strong>When:</strong> {{ event.data.when }} &middot;
-        <strong>Where:</strong> {{ event.data.where }} &middot;
-        <strong>Hosted by:</strong> {{ event.data.who }}
-      </p>
+      <ul class="event-meta">
+        <li><strong>When:</strong> {{ event.data.when }}</li>
+        <li><strong>Where:</strong> {{ event.data.where }}</li>
+        <li><strong>Hosted by:</strong> {{ event.data.who }}</li>
+      </ul>
       <div class="event-description">{{ event.templateContent | safe }}</div>
     </div>
   {% endfor %}
@@ -28,18 +29,19 @@ permalink: "events.html"
 
 {% if collections.pastEvents.length > 0 %}
 <section class="events-past">
+  <span class="event-pin" aria-hidden="true">📌</span>
   <h2>Past Events</h2>
   {% for event in collections.pastEvents %}
     <div class="event-card event-card--past">
-      {% if event.data.image %}
-        <img src="{{ event.data.image | url }}" alt="">
-      {% endif %}
+        {% if event.data.eventImage %}
+          <img src="{{ event.data.eventImage.image | url }}" alt="{{ event.data.eventImage.imageAlt }}">
+        {% endif %}
       <h3>{{ event.data.title }}</h3>
-      <p class="event-meta">
-        <strong>When:</strong> {{ event.data.when }} &middot;
-        <strong>Where:</strong> {{ event.data.where }} &middot;
-        <strong>Hosted by:</strong> {{ event.data.who }}
-      </p>
+      <ul class="event-meta">
+        <li><strong>When:</strong> {{ event.data.when }}</li>
+        <li><strong>Where:</strong> {{ event.data.where }}</li>
+        <li><strong>Hosted by:</strong> {{ event.data.who }}</li>
+      </ul>
       <div class="event-description">{{ event.templateContent | safe }}</div>
     </div>
   {% endfor %}
