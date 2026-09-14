@@ -60,14 +60,43 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/img");
   eleventyConfig.addPassthroughCopy("admin");
 
-  // Every markdown file in src/who/ becomes part of the "who" collection
+  // Every markdown file in src/who/ becomes part of the "who" collection,
+  // sorted by last name (falling back to full name for any entry that
+  // predates the Last Name field)
+  const sortKeyFor = (person) =>
+    (person.data.sortName || person.data.name || "").trim().toLowerCase();
+
   eleventyConfig.addCollection("who", (collectionApi) => {
-    return collectionApi.getFilteredByGlob("src/who/*.md").sort((a, b) => {
-      const nameA = (a.data.name || "").toLowerCase();
-      const nameB = (b.data.name || "").toLowerCase();
-      return nameA.localeCompare(nameB);
-    });
+    return collectionApi
+      .getFilteredByGlob("src/who/*.md")
+      .sort((a, b) => sortKeyFor(a).localeCompare(sortKeyFor(b)));
   });
+
+  // Groups the same people by their first letter, in order, so who.html can
+  // render an alphabetical jump-nav that only shows letters actually in use
+  // — no manual A–Z maintenance as people join.
+  eleventyConfig.addCollection("whoByLetter", (collectionApi) => {
+    const people = collectionApi
+      .getFilteredByGlob("src/who/*.md")
+      .sort((a, b) => sortKeyFor(a).localeCompare(sortKeyFor(b)));
+
+    const groups = [];
+    for (const person of people) {
+      const letter = (sortKeyFor(person).charAt(0) || "#").toUpperCase();
+      const currentGroup = groups[groups.length - 1];
+      if (currentGroup && currentGroup.letter === letter) {
+        currentGroup.people.push(person);
+      } else {
+        groups.push({ letter, people: [person] });
+      }
+    }
+    return groups;
+  });
+
+  // Renders a markdown string stored in front matter data (e.g. a project
+  // description inside the repeatable Projects list) using the same
+  // hardened, path-prefix-aware renderer as the main page content.
+  eleventyConfig.addFilter("markdown", (content) => md.render(content || ""));
 
   // Events are split into upcoming/past HERE, at build time, by comparing
   // each event's `when` date to the moment the site is built. Because the

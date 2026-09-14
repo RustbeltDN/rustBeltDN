@@ -62,8 +62,10 @@ a:focus-visible {
 
 .site-header {
   display: flex; align-items: center; justify-content: space-between;
+  max-width: 720px; margin: 0 auto;
   padding: 1rem 1.5rem; border-bottom: 1px solid var(--color-border);
 }
+
 .site-logo { display: flex; align-items: center; gap: 0.5rem; 
   text-decoration: none; color: inherit; font-weight: 600; }
 #logo { 
@@ -84,6 +86,7 @@ a:focus-visible {
 
 .site-footer { text-align: center; padding: 2rem; color: var(--text-secondary); font-size: 0.9rem; }
 
+/* People cards */
 .who-card, .event-card {
   border: 1px solid var(--color-border); background: var(--color-surface);
   border-radius: 8px; padding: 1.25rem; margin-bottom: 1.25rem;
@@ -92,6 +95,35 @@ a:focus-visible {
   max-width: 160px; aspect-ratio: 1; object-fit: cover;
   border-radius: 50%; display: block; margin-bottom: 0.75rem;
 }
+.who-jump-nav {
+  display: flex; flex-wrap: wrap; gap: 0.4rem;
+  margin-bottom: 1.5rem; font-size: 0.9rem;
+}
+.who-jump-nav a {
+  display: inline-block; min-width: 1.6rem; text-align: center;
+  padding: 0.15rem 0.3rem; border-radius: 4px;
+}
+.who-letter-heading {
+  color: var(--text-secondary); border-bottom: 1px solid var(--color-border);
+  padding-bottom: 0.25rem; margin: 2rem 0 1rem;
+}
+.who-letter-heading:first-of-type { margin-top: 0; }
+.who-projects {
+  margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--color-border);
+  display: flex; flex-direction: column; gap: 0.85rem;
+}
+.project-row { display: flex; gap: 0.75rem; align-items: flex-start; }
+.project-icon-link { flex-shrink: 0; }
+.project-icon {
+  width: 56px; height: 56px; object-fit: cover;
+  border-radius: 6px; display: block; margin: 0;
+}
+.project-info { flex: 1; min-width: 0; }
+.project-title { margin: 0; font-weight: 600; }
+.project-description { font-size: 0.9rem; color: var(--text-secondary); }
+.project-description p { margin: 0.25rem 0 0; }
+
+/* Event cards */
 .event-card img {
   max-width: 160px; border-radius: 8px; display: block; margin-bottom: 0.75rem;
 }
@@ -111,7 +143,7 @@ figure.homepage img {
 figcaption {
   font-size:smaller;
   font-style:italic;
-  color: var(--color-teal-solid);
+  color: var(--color-teal);
 }
 
 /* ebb: For mobile portrait mode */
@@ -129,3 +161,7 @@ figcaption {
     margin-right: 1rem;
   }
 }
+@media (max-width: 480px) {
+  .project-row { flex-direction: column; }
+}
+

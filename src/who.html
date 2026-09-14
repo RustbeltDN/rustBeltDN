@@ -4,16 +4,54 @@ title: Who We Are
 permalink: "who.html"
 ---
 <h1>Who We Are</h1>
+
+{% if collections.whoByLetter.length > 1 %}
+<nav class="who-jump-nav" aria-label="Jump to letter">
+  {% for group in collections.whoByLetter %}
+    <a href="#letter-{{ group.letter }}">{{ group.letter }}</a>
+  {% endfor %}
+</nav>
+{% endif %}
+
 <div class="who-list">
-  {% for person in collections.who %}
-    <section class="who-card">
-      {% if person.data.photo %}
-        <img src="{{ person.data.photo | url }}" alt="Photo of {{ person.data.name }}">
-      {% endif %}
-      <h2>{{ person.data.name }}</h2>
-      {% if person.data.pronouns %}<p class="who-pronouns">{{ person.data.pronouns }}</p>{% endif %}
-      {% if person.data.role %}<p class="who-role">{{ person.data.role }}</p>{% endif %}
-      <div class="who-bio">{{ person.templateContent | safe }}</div>
-    </section>
+  {% for group in collections.whoByLetter %}
+    <h2 id="letter-{{ group.letter }}" class="who-letter-heading">{{ group.letter }}</h2>
+    {% for person in group.people %}
+      <section class="who-card">
+        {% if person.data.photo %}
+          <img src="{{ person.data.photo | url }}" alt="Photo of {{ person.data.name }}">
+        {% endif %}
+        <h3>{{ person.data.name }}</h3>
+        {% if person.data.pronouns %}<p class="who-pronouns">{{ person.data.pronouns }}</p>{% endif %}
+        {% if person.data.role %}<p class="who-role">{{ person.data.role }}</p>{% endif %}
+        <div class="who-bio">{{ person.templateContent | safe }}</div>
+
+        {% if person.data.projects and person.data.projects.length %}
+          <div class="who-projects">
+            {% for project in person.data.projects %}
+              <div class="project-row">
+                {% if project.image %}
+                  {% if project.url %}
+                    <a class="project-icon-link" href="{{ project.url }}">
+                      <img class="project-icon" src="{{ project.image | url }}" alt="">
+                    </a>
+                  {% else %}
+                    <img class="project-icon" src="{{ project.image | url }}" alt="">
+                  {% endif %}
+                {% endif %}
+                <div class="project-info">
+                  <p class="project-title">
+                    {% if project.url %}<a href="{{ project.url }}">{{ project.title }}</a>{% else %}{{ project.title }}{% endif %}
+                  </p>
+                  {% if project.description %}
+                    <div class="project-description">{{ project.description | markdown | safe }}</div>
+                  {% endif %}
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </section>
+    {% endfor %}
   {% endfor %}
 </div>
