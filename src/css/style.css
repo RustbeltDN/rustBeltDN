@@ -132,7 +132,7 @@ a:focus-visible {
   font-size: 1.5rem; line-height: 1; user-select: none;
 }
 .event-card img {
-  max-width: 160px; border-radius: 8px; display: block; margin-bottom: 0.75rem;
+  max-width: 500px; border-radius: 8px; display: block; margin-bottom: 0.75rem;
 }
 .event-card--past { opacity: 0.75; }
 .event-meta {
