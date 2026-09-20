@@ -2,7 +2,7 @@
 name: Greg Bondar
 sortName: Bondar
 pronouns: ''
-role: Member
+role: Member; Adjunct Lecturer of History and Anthropology, Penn State Erie/Behrend
 photo: /img/members/467871448_10169503122400319_7540108785957398040_n.jpg
 projects:
   - title: The Postmarks of Mary Russell Mitford's Letters
