@@ -11,6 +11,12 @@ projects:
       imageAlt: Postal clerks stamping letters in the central London Post Office.
     url: https://www.slideshare.net/slideshow/how-to-read-and-code-19thcentury-british-postmarks-in-tei-with-mary-russell-mitfords-letters-146692317/146692317
     description: An ongoing study to understand, catalog, and encode the postmarks on the early 19th-century manuscript correspondence of Mary Russell Mitford.
+  - title: Tell Timai Archaeological Project
+    projectImage:
+      image: /img/members/patch.png
+      imageAlt: Tell Timai Archaeological Project Patch showing the famous circular mosaic of Arsinoe the Second's head wearing a trireme ship as a hat from the Alexandria Museum.
+    url: https://telltimai.org
+    description: Archaeology project at Tell Timai in Egypt on the Nile Delta!
 ---
 
 I am an archaeologist at Penn State Erie/Behrend who works as the Surveyor for the Tell Timai Archaeological Project in Egypt, and the Petra Garden and Pool Complex at Petra, Jordan, creating digital maps and 3D models of these sites. I am also the 'Manuscript Archaeologist' for the Digital MItford, where I have constructed, and continue to maintain, the database of manuscript letters of Mary Russell Mitford. As such, I have taken a few thousand photographs of these manuscript letters, mainly in British archives, and have sought to understand their varieties of postmarks. Besides courses in Anthropology, Archaeology, History, 'Science, Technology, and Society,' and Geography, I have taught courses in Web Development, XML markup, XSLT, Xquery, Schemas, RegEx, HTML, etc. I will use generative AI reluctantly and warily, and disclose such use so one knows who to blame!
