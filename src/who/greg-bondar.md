@@ -11,11 +11,11 @@ projects:
       imageAlt: Postal clerks stamping letters in the central London Post Office.
     url: https://www.slideshare.net/slideshow/how-to-read-and-code-19thcentury-british-postmarks-in-tei-with-mary-russell-mitfords-letters-146692317/146692317
     description: An ongoing study to understand, catalog, and encode the postmarks on the early 19th-century manuscript correspondence of Mary Russell Mitford.
-  - title: Tell Timai Archaeological Project
+  - title: Tell Timai Project
     projectImage:
       image: /img/members/patch.png
-      imageAlt: Tell Timai Archaeological Project Patch showing the famous circular mosaic of Arsinoe the Second's head wearing a trireme ship as a hat from the Alexandria Museum.
-    url: https://telltimai.org
+      imageAlt: Tell Timai Archaeological Project Patch showing the famous circular mosaic of Arsinoe the Second's head wearing a trireme ship as a hat from the Alexandria Museum
+    url: https://telltimai.org/
     description: Archaeology project at Tell Timai in Egypt on the Nile Delta!
 ---
 
