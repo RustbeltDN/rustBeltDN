@@ -2,7 +2,7 @@
 name: Christopher Petit
 sortName: Petit
 pronouns: He/him
-role: Founding Member
+role: Founding member
 photo: /img/members/chrisfinal.png
 projects: []
 ---
