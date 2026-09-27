@@ -1,5 +1,5 @@
 ---
-name: Ella
+name: Ella Galioto
 sortName: Galioto
 pronouns: she/her
 role: ''
