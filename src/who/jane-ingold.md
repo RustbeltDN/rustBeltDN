@@ -2,7 +2,7 @@
 name: Jane Ingold
 sortName: Ingold
 pronouns: ''
-role: Founding Member
+role: Founding member
 photo: ''
 projects: []
 ---
