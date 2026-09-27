@@ -1,5 +1,5 @@
 ---
-name: Christopher
+name: Christopher Petit
 sortName: Petit
 pronouns: He/him
 role: Founding Member
