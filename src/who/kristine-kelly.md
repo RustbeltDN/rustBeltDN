@@ -2,7 +2,7 @@
 name: Kristine Kelly
 sortName: Kelly
 pronouns: she, her
-role: founding meember
+role: Founding member
 photo: /img/members/img_0370.jpeg
 projects: []
 ---
