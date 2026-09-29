@@ -1,5 +1,5 @@
 ---
-title: 'afterNana: Bonnie Cane & John Loggia, DEI XHRIST'
+title: 'afterNANA: Bonnie Cane & John Loggia, DEI XHRIST'
 who: Feed Media Arts Center
 when: 2026-10-09
 where: Feed Media Arts Center, 1307 State Street, Erie, PA
