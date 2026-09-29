@@ -5,7 +5,7 @@ when: 2026-10-10
 where: Feed Media Art Center, 1307 State Street, Erie PA
 eventImage:
   image: /img/events/octnovfeed.png
-  imageAlt: Flyer for four October 2026 events at the FEED
+  imageAlt: flyer for six afterNANA events from October 9 – Nov 25 at the FEED
 ---
 
 Saturday 10/10, 4pm – late:  Weird Paul Petroskey! and more!
