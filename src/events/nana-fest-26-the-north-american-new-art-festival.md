@@ -1,7 +1,7 @@
 ---
 title: "NANA Fest '26: The North American new Art Festival"
 who: Feed Media Arts Center
-when: 2026-10-01
+when: 2026-10-04
 where: 'Feed Media Art Center: 1307 State Street, Erie PA'
 eventImage:
   image: /img/events/nanafest2026-poster.png
