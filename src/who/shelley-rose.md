@@ -10,13 +10,13 @@ projects:
       image: /img/members/1.png
       imageAlt: Chalk Talk Logo- gray headphones surround a multicolored diamond in a microphone stand.
     url: https://podcast.cleteaching.org/
-    description: ''
+    description: I co-host the Chalk Talk with CLETeaching podcast with Molly Buckley-Marudas.
   - title: Cleveland Teaching Collaborative
     projectImage:
       image: https://cleteaching.org/wp-content/uploads/2021/02/cropped-WP-Header.gif
       imageAlt: CLE Teaching header logo
     url: https://cleteaching.org/
-    description: ''
+    description: Molly Buckley-Marudas and I founded the Cleveland Teaching Collaborative in 2020. I am the web developer for all our sites, including the Omeka referatory that contains resources for PK-12 and higher education instructors.
   - title: Educate. Analyze. Curate
     projectImage:
       image: https://pressbooks.ulib.csuohio.edu/eac/wp-content/uploads/sites/202/2025/09/1929.742_o3-768x777.jpg
