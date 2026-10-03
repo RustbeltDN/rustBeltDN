@@ -2,7 +2,7 @@
 name: Sean Martin
 sortName: Martin
 pronouns: he/him
-role: filmmaker
+role: ''
 photo: /img/members/img_1110-82.jpeg
 projects:
   - title: The Golden Age
