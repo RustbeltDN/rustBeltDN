@@ -9,3 +9,5 @@ eventImage:
 ---
 
 Join us for our introductory workshop on the inner workings of your computer. Learn about how files are managed, what "cloud storage" really means for your work, shortcuts to make your life easier, and other tips for managing your day-to-day computer tasks.
+
+Zoom attendance available via [registration](https://psu.zoom.us/meeting/register/jUtRA3SkR8Cw-kZEIj12wA).
