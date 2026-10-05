@@ -3,7 +3,7 @@ name: Jane Ingold
 sortName: Ingold
 pronouns: ''
 role: Founding member
-photo: ''
+photo: /img/members/me-carol.jpg
 projects: []
 ---
 
