@@ -34,7 +34,7 @@ projects:
       image: /img/members/curatescape-logo-fin.png
       imageAlt: Curatescape logo
     url: https://curatescape.org
-    description: Curatescape is a web and app framework developed by the Center for Public History + Digital Humanities at Cleveland State University for the Omeka CMS.
+    description: Curatescape is a web and app framework developed by the Center for Public History + Digital Humanities at Cleveland State University for the Omeka CMS. Original development of Curatescape was funded by the National Endowment for the Humanities.
   - title: PlacePress
     projectImage:
       image: /img/members/placepress_icon_color.png
