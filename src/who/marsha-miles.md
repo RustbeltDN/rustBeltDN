@@ -6,7 +6,9 @@ role: ''
 photo: /img/members/profile_portrait2025.jpg
 projects:
   - title: Cleveland Memory
-    projectImage: null
+    projectImage:
+      image: /img/members/clevemem-logo-inner.png
+      imageAlt: Cleveland Memory logo
     url: https://www.clevelandmemory.org/
     description: Cleveland Memory, launched in 2002, is a freely searchable online collection of digital photographs, texts, oral histories, videos, and other local history resources. Created by the Michael Schwartz Library at Cleveland State University in collaboration with community partners throughout Northeast Ohio, the collection makes the region’s history and cultural heritage accessible to researchers, students, and the public.
 ---
