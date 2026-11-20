@@ -5,7 +5,7 @@ when: 2026-11-01
 where: Carnegie Cinema at University Park Campus
 eventImage:
   image: /img/events/img_5510.jpeg
-  imageAlt: ''
+  imageAlt: Poster of The Golden Age, A Film by Sean Martin, featuring a cutout 2D image of a man in a tuxedo holding a glass, face obscured.
 ---
 
 Our short film _The Golden Age_ is screening at the Centre Film Festival at the Carnegie Cinema in University Park on November 1st, 2026 - the student film block featuring the film starts at 6 P.M.!
